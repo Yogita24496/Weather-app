@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
+// src/App.test.js
+import { render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-test('renders Weather Forecast title', () => {
-  render(<App />);
-  const titleElement = screen.getByText(/Weather Forecast/i);
-  expect(titleElement).toBeInTheDocument();
+test('renders navigation links', () => {
+  const { getByText } = render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+
+  expect(getByText(/Home/i)).toBeInTheDocument();
+  expect(getByText(/About/i)).toBeInTheDocument();
 });
