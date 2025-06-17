@@ -8,12 +8,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
+        {/* <nav>
           <ul>
             <li><Link to="/">Weather</Link></li>
             <li><Link to="/about">About</Link></li>
           </ul>
-        </nav>
+        </nav> */}
 
         <Routes>
           <Route path="/" element={<WeatherApp />} />
